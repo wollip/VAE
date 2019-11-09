@@ -12,7 +12,7 @@ from os import stat, mkdir
 from math import floor, ceil
 
 # WatChMaL imports
-from io_utils.data_handling_2 import WCH5Dataset
+from io_utils.data_handling_3 import WCH5Dataset
 from io_utils.ioconfig import save_config
 from plot_utils.notebook_utils import CSVData
 
@@ -63,8 +63,7 @@ class Engine(ABC):
             self.model_accs=self.model
 
         # Create the dataset object
-        self.dset=WCH5Dataset(config.path, config.val_split, config.test_split,
-                              shuffle=config.shuffle, reduced_dataset_size=config.subset)
+        self.dset=WCH5Dataset(config.path, config.train_indices, config.val_indices, config.test_indices)
 
         # Define the variant dependent attributes
         self.criterion=None
