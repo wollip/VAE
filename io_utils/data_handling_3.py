@@ -13,8 +13,8 @@ class WCH5Dataset(Dataset):
     """
 
 
-    def __init__(self, path, train_indices_file, validation_indices_file, test_indices_file, shuffle=1, 
-                 transform=None, reduced_dataset_size=None, seed=42):
+    def __init__(self, path, train_indices_file, validation_indices_file, test_indices_file, 
+                 transform=None):
 
 
         f=h5py.File(path,'r')
